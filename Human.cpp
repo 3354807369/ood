@@ -3,19 +3,13 @@
 
 char Human::makeMove()
 {
+	cout << "Enter move:" << endl;
 	cin >> move;
 	return move;
 }
 
 string Human::getName()
 {
-	name = "human";
+	name = "Human";
 	return name;
-}
-Human::Human(std::string name){
-    this->name = name;
-}
-
-Human::Human(){
-    name = "Human";
 }

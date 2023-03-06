@@ -13,4 +13,4 @@ int main() {
 		cout << "It's a tie!" << endl;
 	}
 	
-}
+} 

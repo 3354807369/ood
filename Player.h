@@ -4,7 +4,7 @@ using namespace std;
  class Player
 {
 public:
-	virtual char makeMove()=0;
+	virtual char makeMove();
 	string getName();
 	char move = 'R';
 	string name;

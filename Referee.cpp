@@ -1,22 +1,20 @@
 #include "Referee.h"
-#include"Human.h"
 #include <iostream>
-
-Referee::Referee(){
+Referee::Referee() {
 
 }
 
 Player* Referee::refGame(Player* player1, Player* player2)
 {
     
-	
-	if (player1->makeMove() == 'P') {
+	player1->makeMove();
+	if (player1->move == 'P') {
 		return player1;
 	}
-	else if (player1->makeMove()== 'R') {
+	else if (player1->move == 'R') {
 		return nullptr;
 	}
-	else if (player1->makeMove()== 'S') {
+	else if (player1->move == 'S') {
 		return player2;
 	}
 	
