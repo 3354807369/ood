@@ -5,7 +5,7 @@ using namespace std;
 {
 public:
 	virtual char makeMove()=0;
-	virtual string getName() = 0;
+	string getName();
 	char move = 'R';
 	string name;
 };
