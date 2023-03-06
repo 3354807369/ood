@@ -3,7 +3,6 @@
 
 char Human::makeMove()
 {
-	cout << "Enter move:" << endl;
 	cin >> move;
 	return move;
 }
