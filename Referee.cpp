@@ -7,15 +7,14 @@ Referee::Referee(){
 
 Player* Referee::refGame(Player* player1, Player* player2)
 {
-    Human h;
-	h.makeMove();
-	if (player1->move == 'P') {
+    char a=player1->makeMove();
+	if (a == 'P') {
 		return player1;
 	}
-	else if (player1->move == 'R') {
+	else if (a == 'R') {
 		return nullptr;
 	}
-	else if (player1->move == 'S') {
+	else if (a == 'S') {
 		return player2;
 	}
 	
