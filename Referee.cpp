@@ -1,12 +1,14 @@
 #include "Referee.h"
 #include <iostream>
+
 Referee::Referee(){
 
 }
 
 Player* Referee::refGame(Player* player1, Player* player2)
 {
-
+    Human h;
+	h.makeMove();
 	if (player1->move == 'P') {
 		return player1;
 	}

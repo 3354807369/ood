@@ -1,6 +1,4 @@
-#ifndef PLAYER_H
-#define PLAYER_H
-
+#pragma once
 #include <string>
 using namespace std;
  class Player
@@ -11,5 +9,4 @@ public:
 	char move = 'R';
 	string name;
 };
-#endif
 

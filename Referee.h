@@ -1,5 +1,4 @@
-#ifndef REFEREE_H
-#define REFEREE_H
+#pragma once
 #include "Player.h"
 #include "Human.h"
 #include "Computer.h"
@@ -14,5 +13,4 @@ public:
     Player* player2;
     
 };
-#endif
 
