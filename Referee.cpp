@@ -1,20 +1,21 @@
-#include<iostream>
-#include"Human.h"
-#include"Computer.h"
-#include"Referee.h"
-using namespace std;
-Referee::Referee(){}
-Human h;
-Computer c;
-Player p;
-Player * refGame(Player * player1, Player * player2){
-  
-  char HumanMove = h.makeMove();
-  char ComputerMove = c.makeMove();
-  if(HumanMove=='R'&&ComputerMove=='S'||HumanMove=='P'&&ComputerMove=='R'||HumanMove=='S'&&ComputerMove=='P'){
-    return player1;
-  };
- if(ComputerMove=='R'&&HumanMove=='S'||ComputerMove=='P'&&HumanMove=='R'||ComputerMove=='S'&&HumanMove=='P'){
-    return player2;
-  };
-};
+#include "Referee.h"
+#include <iostream>
+Referee::Referee(){
+
+}
+
+Player* Referee::refGame(Player* player1, Player* player2)
+{
+
+	if (player1->move == 'P') {
+		return player1;
+	}
+	else if (player1->move == 'R') {
+		return nullptr;
+	}
+	else if (player1->move == 'S') {
+		return player2;
+	}
+	
+		return 0;
+}

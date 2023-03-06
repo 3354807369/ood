@@ -1,12 +1,15 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-#include<iostream>
+
+#include <string>
 using namespace std;
-class Player{
+ class Player
+{
 public:
-Player();
-char move='R';
-virtual char makeMove();
-virtual string getName();
+	virtual char makeMove();
+	string getName();
+	char move = 'R';
+	string name;
 };
 #endif
+

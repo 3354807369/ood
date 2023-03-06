@@ -1,6 +1,11 @@
-#include"Player.h"
-#include<iostream>
-using namespace std;
-Player::Player(){
-    
-};
+#include "Player.h"
+
+char Player::makeMove()
+{
+	return 0;
+}
+
+string Player::getName()
+{
+	return string();
+}
