@@ -12,4 +12,5 @@ int main() {
 	else {
 		cout << "It's a tie!" << endl;
 	}
+	
 }
