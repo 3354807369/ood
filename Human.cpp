@@ -12,3 +12,10 @@ string Human::getName()
 	name = "human";
 	return name;
 }
+Human::Human(std::string name){
+    this->name = name;
+}
+
+Human::Human(){
+    name = "Human";
+}
