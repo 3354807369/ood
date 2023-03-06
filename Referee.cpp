@@ -9,14 +9,14 @@ Referee::Referee(){
 Player* Referee::refGame(Player* player1, Player* player2)
 {
     
-	player1->makeMove();
-	if (player1->move == 'P') {
+	
+	if (player1->makeMove() == 'P') {
 		return player1;
 	}
-	else if (player1->move== 'R') {
+	else if (player1->makeMove()== 'R') {
 		return nullptr;
 	}
-	else if (player1->move== 'S') {
+	else if (player1->makeMove()== 'S') {
 		return player2;
 	}
 	
