@@ -1,15 +1,16 @@
 #include "Human.h"
-#include <iostream>
-
-char Human::makeMove()
-{
-	cout << "Enter move:" << endl;
-	cin >> move;
-	return move;
+#include"Player.h"
+#include<iostream>
+using namespace std;
+using std::cout;
+Human::Human():Human("Human"){}
+Human::Human(string name){
+   this->name=name;
 }
-
-string Human::getName()
-{
-	name = "Human";
-	return name;
-}
+Move* Human::makeMove(){
+    string move;
+    printf("Enter Move");
+    cin>>move;
+    Move* HM = new Move(move);
+    return HM;
+};

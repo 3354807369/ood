@@ -1,16 +1,11 @@
-#pragma once
-#include "Player.h"
-#include "Human.h"
-#include "Computer.h"
-class Referee :
-    public Player
-{
-    
-public:
-    Referee(); // constructor
-    Player* refGame(Player* player1, Player* player2);
-    Player* player1;
-    Player* player2;
-    
+#ifndef REFEREE_H
+#define REFEREE_H
+#include"Computer.h"
+#include"Human.h"
+#include<iostream>
+class Referee{
+    public:
+    Referee();
+    Player* refGame(Player* player1,Player* player2);
 };
-
+#endif

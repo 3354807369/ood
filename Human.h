@@ -1,9 +1,13 @@
-#pragma once
+#ifndef HUMAN_H
+#define HUMAN_H
 #include "Player.h"
-class Human: public Player
+#include<iostream>
+#include<string>
+class Human:public Player
 {
-public:
-	char makeMove();
-	string getName();
+    Human();
+    Human(string name);
+Move* makeMove();
+string getName();
 };
-
+#endif
