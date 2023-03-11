@@ -9,7 +9,7 @@ Human::Human(string name){
 }
 Move* Human::makeMove(){
     string move;
-    
+    cout<<"Enter Move: ";
     cin>>move;
     Move* HM = new Move(move);
     return HM;

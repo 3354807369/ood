@@ -5,7 +5,7 @@ Computer::Computer(){
  this->name="Computer";
 } 
 Move* Computer::makeMove(){
-    
+    move="Rock";
    Move* CM=new Move(move);
    return CM;
 }
