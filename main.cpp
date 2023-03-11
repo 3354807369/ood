@@ -4,6 +4,7 @@
 #include "Referee.h"
 #include "Human.h"
 #include "Move.h"
+#include"Player.h"
 using namespace std;
 
 int main(){

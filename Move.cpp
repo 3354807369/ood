@@ -4,7 +4,7 @@ Move::Move(){
   cout << "Enter move ";
   cin >> name;}
 Move::Move(string moveName){
-  name = moveName;
+  this->name = moveName;
 }
 string Move::getName(){
  
