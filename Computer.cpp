@@ -7,7 +7,7 @@ Computer::Computer(){
 } 
 Move* Computer::makeMove(){
     
-   Move* CM=new Rock();
+   Move* CM=new Move(move);
    return CM;
 }
 string Computer::getName(){

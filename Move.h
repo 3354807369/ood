@@ -1,6 +1,6 @@
 #ifndef MOVE_H
 #define MOVE_H
-#include"Rock.h"
+
 #include<string>
 
 using namespace std;
