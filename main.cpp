@@ -7,9 +7,9 @@
 using namespace std;
 
 int main(){
-  Computer Player1;
+  Computer *Player1;
   string name="Kenny";
-  Human Player2;
+  Human *Player2=new Human("Steve");
   Referee Ref1;
-  Ref1.refGame(&Player1, &Player2);
+  Ref1.refGame(Player1, Player2);
 }

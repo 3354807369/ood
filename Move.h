@@ -7,6 +7,7 @@ class Move{
     private:
    string name;
   public:
+  Move();
   Move(string name){
     this->name=name;
   }

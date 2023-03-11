@@ -1,6 +1,6 @@
 #include "Player.h"
 
 
-Move* Player::makeMove(){
-   
-}
+Player::Player(){}
+string Player::getName(){
+return name;}
