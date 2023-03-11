@@ -8,9 +8,7 @@ class Move{
    string name;
   public:
   Move();
-  Move(string name){
-    this->name=name;
-  }
+  Move(string name){};
 string getName();
 
 };
