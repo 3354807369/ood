@@ -1,14 +1,15 @@
 #ifndef MOVE_H
 #define MOVE_H
-#include"Move.h"
+#include"Rock.h"
 #include<string>
 
 using namespace std;
 class Move{
-    private:
-   string name;
+    
+   
   
  public:
+ string name;
  Move();
   Move(string name);
 string getName();
