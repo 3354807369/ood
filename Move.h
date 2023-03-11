@@ -8,7 +8,7 @@ class Move{
    string name;
   public:
   Move();
-  Move(string name){};
+  Move(string moveName){};
 string getName();
 
 };
