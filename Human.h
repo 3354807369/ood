@@ -7,7 +7,7 @@ using namespace std;
 class Human:public Player
 {
     public:
-   
+   Human();
     Human(string name);
 Move* makeMove();
 string getName();
