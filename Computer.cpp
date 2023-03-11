@@ -1,6 +1,5 @@
 #include"Computer.h"
 #include<iostream>
-#include"Rock.h"
 using namespace std;
 Computer::Computer(){
  this->name="Computer";
