@@ -19,5 +19,32 @@ Player* Referee::refGame(Player* player1,Player* player2){
     cout<<player2->getName()<<endl;
     return player2;
   }
+   else if((move1 == "Monkey" && move2 == "Ninja")||
+          (move1 == "Monkey" && move2 == "Robot")||
+          (move1 == "Robot" && move2 == "Ninja")||
+          (move1 == "Robot" && move2 == "Zombie")||
+          (move1 == "Pirate" && move2 == "Robot")||
+          (move1 == "Pirate" && move2 == "Monkey")||
+          (move1 == "Ninja" && move2 == "Pirate")||
+          (move1 == "Ninja" && move2 == "Zombie")||
+          (move1 == "Zombie" && move2 == "Pirate")||
+          (move1 == "Zombie" && move2 == "Monkey")){
+            cout << player1->getName() << endl;
+            return player1;
+          }
+
+          else if((move2 == "Monkey" && move1 == "Ninja")||
+          (move2 == "Monkey" && move1 == "Robot")||
+          (move2 == "Robot" && move1 == "Ninja")||
+          (move2 == "Robot" && move1 == "Zombie")||
+          (move2 == "Pirate" && move1 == "Robot")||
+          (move2 == "Pirate" && move1 == "Monkey")||
+          (move2 == "Ninja" && move1 == "Pirate")||
+          (move2 == "Ninja" && move1 == "Zombie")||
+          (move2 == "Zombie" && move1 == "Pirate")||
+          (move2 == "Zombie" && move1 == "Monkey")){
+            cout << player2->getName() << endl;
+            return player2;
+          }
   return 0;
 }

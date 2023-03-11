@@ -1,10 +1,8 @@
-#include"Move.h"
 
-Move::Move(){
-  cout << "Enter move ";
-  cin >> name;}
-Move::Move(string moveName){
-  this->name = moveName;
+#include"Move.h"
+Move::Move(){}
+Move::Move(string name){
+  this->name = name;
 }
 string Move::getName(){
  

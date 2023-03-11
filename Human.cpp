@@ -3,7 +3,7 @@
 #include<iostream>
 using namespace std;
 using std::cout;
-Human::Human():Human("Human"){}
+
 Human::Human(string name){
    this->name=name;
 }
@@ -14,3 +14,6 @@ Move* Human::makeMove(){
     Move* HM = new Move(move);
     return HM;
 };
+string Human::getName(){
+    return name;
+}
