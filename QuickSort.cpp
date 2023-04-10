@@ -4,7 +4,7 @@ std::vector<int> QuickSort::sort(std::vector<int> list){
   return realsort(list,0,list.size()-1);
 }
 std::vector<int> QuickSort::realsort(std::vector<int> list,int begin,int end){
-    if(end-begin<2){
+    if(end-begin<=1){
         if(list[end]<list[begin]){
             std::swap(list[end],list[begin]);
         }
@@ -13,7 +13,7 @@ std::vector<int> QuickSort::realsort(std::vector<int> list,int begin,int end){
 if(begin>=end){return list;}
 int pivot = list[begin + 2];
 int left = begin, right = end;
-while(left <= right){
+while(left < right){
     while(list[left] < pivot){
         left++;
     }
