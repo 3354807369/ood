@@ -4,7 +4,7 @@ return realsearch(list,target,0,list.size()-1);
 }
 bool RecursiveBinarySearch::realsearch(std::vector<int> list, int target, int begin, int end){
     if(end-begin < 2){
-        if(target!=list[begin]||target!=list[end]){
+        if(target!=list[begin]&&target!=list[end]){
         return false;
         }
     }

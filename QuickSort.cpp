@@ -12,12 +12,12 @@ std::vector<int> QuickSort::realsort(std::vector<int> list,int begin,int end){
     }
 if(begin>=end){return list;}
 int pivot = list[begin + 2];
-int left = begin, right = end;
+int left = begin+1, right = end;
 while(left <= right){
-    while(list[left] < pivot){
+    while(left<=right&&list[left] < pivot){
         left++;
     }
-    while(list[right] > pivot){
+    while(left<=right&&list[right] > pivot){
         right--;
     }
     if(left <= right){
@@ -26,7 +26,7 @@ while(left <= right){
         right--;
     }
 }
-list = realsort(list, begin, right);
-list = realsort(list, left, end);
+list = realsort(list, begin, right-1);
+list = realsort(list, right+1, end);
 return list;
 }
