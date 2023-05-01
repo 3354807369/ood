@@ -21,7 +21,7 @@ std::list<int> bigNumCalc::add(std::list<int> num1, std::list<int> num2){
         if(num>=10){
             num -= 10;
             advancement=1;
-        }else{
+        }else{ 
             advancement=0;
         }
         list.push_front(num);
