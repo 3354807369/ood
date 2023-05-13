@@ -1,4 +1,4 @@
-#include "Autocompletion.h"
+#include "Autocomplete.h"
 
 vector<string> Autocomplete::getSuggestions(string partialWord){
     vector<string> res;
