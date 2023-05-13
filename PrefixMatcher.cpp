@@ -1,7 +1,7 @@
 #include "PrefixMatcher.h"
 int PrefixMatcher::selectRouter(string networkAddress){
     int longest=0;
-    int router=0;
+    int routerNumber=0;
     for(size_t i=0;i<addre.size();i++){
         int minim = min(networkAddress.length(),addre[i].length());
         int match_len=0;
@@ -14,11 +14,11 @@ int PrefixMatcher::selectRouter(string networkAddress){
         }
         if(match_len>longest){
             longest=match_len;
-            router=i;
+            routerNumber=i;
         }
 
     }
-    return router;
+    return routerNumber;
 }
 void PrefixMatcher::insert(string address,int routerNumber){
 addre.push_back(address);
