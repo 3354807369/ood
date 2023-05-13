@@ -18,7 +18,7 @@ int PrefixMatcher::selectRouter(string networkAddress){
         }
 
     }
-    return routerNumber;
+    return numbers[routerNumber];
 }
 void PrefixMatcher::insert(string address,int routerNumber){
 addre.push_back(address);
