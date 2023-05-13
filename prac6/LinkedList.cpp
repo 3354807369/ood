@@ -2,8 +2,8 @@
 #include <iostream>
 #include<limits>
 LinkedList::LinkedList(){
-    head = new Node();
-    return;
+    head = nullptr;
+    
 }
 LinkedList::LinkedList(int* array,int len){
     head = new Node();
@@ -11,7 +11,8 @@ LinkedList::LinkedList(int* array,int len){
     for(int i=0;i < len;i++){
         Node* add = new Node();
         add->setData(array[i]);
-        tmp = add;
+        tmp->setNext(add);
+        tmp = tmp->getNext();
     }
     return;
 }
@@ -31,26 +32,26 @@ LinkedList::~LinkedList(){
         if(pos <= 1){
            Node* n=new Node();
            n->setData(newNum);
-           n->setLink(head->getLink());
-           head->setLink(n);
+           n->setNext(head->getNext());
+           head->setNext(n);
            return;
         }
         int position=1;
         Node* n = head;
         while(position<pos){
-            if(n->getLink() == nullptr){
+            if(n->getNext() == nullptr){
                 Node* newNode = new Node();
                 newNode->setData(newNum);
-                n->setLink(newNode);
+                n->setNext(newNode);
                 return;
             }
-            n=n->getLink();
+            n=n->getNext();
             position++;
         }
         Node* newNode=new Node();
         newNode->setData(newNum);
-        newNode->setLink(n->getLink());
-        n->setLink(newNode);
+        newNode->setNext(n->getNext());
+        n->setNext(newNode);
         return;
     }
 bool LinkedList::deletePosition(int pos){
@@ -59,28 +60,57 @@ bool LinkedList::deletePosition(int pos){
     }
     int position=0;
     Node* tmp=new Node();
-    tmp->setLink(head);
+    tmp->setNext(head);
     Node* del = head;
-    while(del->getLink() != nullptr){
-        tmp = tmp->getLink();
-        del = del->getLink();
+    while(del->getNext() != nullptr){
+        tmp = tmp->getNext();
+        del = del->getNext();
         position++;
         if(position>=pos){
-            tmp->setLink(del->getLink());
+            tmp->setNext(del->getNext());
             delete del;
             return true;
         }
     }
-    return -1;
+    
 }
 
 void LinkedList::printList(){
     Node* tmp = head;
-    while(tmp->getLink()!=nullptr){
-        tmp=tmp->getLink();
-        std::cout<<"["<<tmp->getData()<<"]"<<" ";
-
+    std::cout<<"[";
+    while(tmp->getNext()!=nullptr){
+        tmp=tmp->getNext();
+        std::cout<<tmp->getData()<<" ";
     }
+    std::cout<<"]";
     std::cout<<std::endl;
     return;
+}
+int LinkedList::get(int pos){
+    if(pos<1){
+        return std::numeric_limits<int>::max();
+    }
+    Node* tmp=head;
+    int position = 0;
+    while(tmp->getNext()!=nullptr){
+        tmp=tmp->getNext();
+        position++;
+        if(position>=pos){
+            return tmp->getData();
+        }
+    }
+    return std::numeric_limits<int>::max();
+}
+
+int LinkedList::search(int target){
+    int position=0;
+    Node* n=head;
+    while(n->getNext()!=nullptr){
+        n=n->getNext();
+        position++;
+        if(n->getData()==target){
+            return position;
+        }
+    }
+    return -1;
 }

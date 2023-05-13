@@ -1,0 +1,63 @@
+问复杂度是多少的题
+
+int sum1 = 0;
+int sum2 = 0;
+for(int i=1;i<n;i=i*4){
+sum1++;
+sum2++;
+}
+
+
+int sum = 0;
+for(int i=0;i<n;i++){
+    for(int j=0;j<n;j++){
+        if(int j=0;j<n;j++){
+            if(i!=j){
+                sum++;
+            }
+        }
+    }
+}
+
+
+
+int sum = 0;
+for(int i=0;i<n;i++){
+    for(int j=0;j<i*i;j++){
+        if(i==j){
+            for(int k=0;k<n;k++){
+                sum++;
+            }
+        }
+    }
+}
+
+
+选择一下哪些是正确的
+
+if f(n)=Ω(g(n)),then g(n)=O(f(n))
+n^3=Ω(n^4)
+θ is a tight bound  notation
+if f(n)=o(g(n)),then f(n)=O(g(n))
+n^2=o(n^2)
+if f(n)=O(g(n)),then f(n)=o(g(n))
+Ω denotes the best case complexity
+if f(n)=o(g(n)) and g(n)=o(h(n)),then f(n)=o(h(n))//这条不太确定是不是这样的，应该差不多
+Big O and Little o are upper bound notations
+if f(n)=θ(g(n)),then f(n)=O(g(n))
+//这题我有些大O小o不太确定，不过应该差不多
+
+Find a,b,d//这个我会
+Find a,b,d master theorem parameters for the binary search algorthm//这道题我完全不懂
+//具体代码没记，但有这个题
+
+//还有一道多选题是问排序的，他给的quiz里应该有，就是那个选项里有很多排序的那个题
+
+//概念题是关于链表的，太长我没记
+
+//代码题也是链表的题，第一个让你写让两个数据交换，第二个是找到一个数据然后删除它
+1.swap(int pos1,int pos2)
+2.Find_delate(int target)
+
+
+

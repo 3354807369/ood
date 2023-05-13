@@ -14,6 +14,6 @@ class LinkedList{
     void printList();
     private:
     Node* head;
-    int position;
+    
 };
 #endif

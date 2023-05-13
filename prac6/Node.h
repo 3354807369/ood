@@ -3,11 +3,9 @@
 class Node{
 public:
 Node();
-Node(int newData);
+
 int getData();
 void setData(int newData);
-Node* getLink();
-void setLink(Node* newLink);
 void setNext(Node *n);
 Node *getNext();
 private:

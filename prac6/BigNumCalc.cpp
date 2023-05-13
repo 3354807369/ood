@@ -1,19 +1,19 @@
-#include "bigNumCalc.h"
-bigNumCalc::bigNumCalc(){
+#include "BigNumCalc.h"
+BigNumCalc::BigNumCalc(){
     return;
 }
-bigNumCalc::~bigNumCalc(){
+BigNumCalc::~BigNumCalc(){
     return;
 }
-std::list<int> bigNumCalc::buildBigNum(std::string numString){
+std::list<int> BigNumCalc::buildBigNum(std::string numString){
     std::list<int> list;
-    for(int i=0;i < numString.size();i++){
+    for(std::size_t i=0;i < numString.size();i++){
         list.push_back(std::stoi(std::string(1,numString[i])));
 }
 return list;
 }
 
-std::list<int> bigNumCalc::add(std::list<int> num1, std::list<int> num2){
+std::list<int> BigNumCalc::add(std::list<int> num1, std::list<int> num2){
     std::list<int> list;
     int num=0,advancement = 0;
     while(num1.size()>0&&num2.size()>0){
@@ -25,13 +25,14 @@ std::list<int> bigNumCalc::add(std::list<int> num1, std::list<int> num2){
             advancement=0;
         }
         list.push_front(num);
+        num1.pop_back();
         num2.pop_back();
     }
     if(advancement>0){list.push_front(advancement);}
     return list;
 }
 
-std::list<int> bigNumCalc::sub(std::list<int> num1,std::list<int>num2){
+std::list<int> BigNumCalc::sub(std::list<int> num1,std::list<int>num2){
     std::list<int> list;
     int num=0,advancement = 0;
     while(num1.size()>0 && num2.size()>0){
@@ -60,7 +61,7 @@ std::list<int> bigNumCalc::sub(std::list<int> num1,std::list<int>num2){
 
     }else if(num2.size()>0){
         num = num2.back()-advancement;
-        if(num<0){
+        if(num < 0){
             num+=10;
             advancement=1;
         }else{
@@ -76,11 +77,11 @@ std::list<int> bigNumCalc::sub(std::list<int> num1,std::list<int>num2){
 }
 
 
-std::list<int> bigNumCalc::mul(std::list<int> num1, std::list<int> num2){
+std::list<int> BigNumCalc::mul(std::list<int> num1, std::list<int> num2){
      std::list<int> list;
     int num=0,advancement = 0;
     while(num1.size()>0 && num2.size()>0){
-        num = num1.back()-num2.back()+advancement;
+        num = num1.back()*num2.back()+advancement;
         if(num>=10){
             advancement = num/10;
             num%=10;
