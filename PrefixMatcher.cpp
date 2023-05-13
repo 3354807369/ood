@@ -5,7 +5,7 @@ int PrefixMatcher::selectRouter(string networkAddress){
     for(size_t i=0;i<addre.size();i++){
         int minim = min(networkAddress.length(),addre[i].length());
         int match_len=0;
-        for(size_t j=0;j<minim;j++){
+        for(int j=0;j<minim;j++){
             if(addre[i][j]==networkAddress[j]){
                 match_len++;
             }else{
