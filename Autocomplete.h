@@ -2,13 +2,25 @@
 #define AUTOCOMPLETE_H
 
 #include <vector>
-#include <iostream>
-using namespace std;
-class Autocomplete{
+#include <string>
+#include <unordered_map>
+
+class TrieNode {
 public:
-vector<string> getSuggestions(string partialWord);
-void insert(string word);
-private:
-vector<string> words;
+    bool is_word;
+    std::unordered_map<char, TrieNode*> children;
+    TrieNode() : is_word(false) {}
 };
+
+class Autocomplete {
+public:
+    Autocomplete();
+    void insert(std::string word);
+    std::vector<std::string> getSuggestions(std::string partialWord);
+    
+private:
+    TrieNode* root;
+    void findWords(TrieNode* node, std::string word, std::vector<std::string>& res);
+};
+
 #endif
