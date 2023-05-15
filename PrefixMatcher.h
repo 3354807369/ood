@@ -1,15 +1,24 @@
 #ifndef PREFIXMATCHER_H
 #define PREFIXMATCHER_H
+
 #include <vector>
-#include <iostream>
-#include <cmath>
-using namespace std;
-class PrefixMatcher{
-    public:
-    int selectRouter(string networkAddress);
-    void insert(string address, int routerNumber);
-    private:
-    vector<string> addre;
-    std::vector<int> numbers;
+#include <string>
+
+class PrefixMatcher {
+public:
+    void insert(std::string address, int routerNumber);
+    int selectRouter(std::string networkAddress);
+
+private:
+    struct TrieNode {
+        std::vector<int> routerNumbers;
+        std::vector<TrieNode*> children;
+        TrieNode() : routerNumbers(), children(256, nullptr) {}
+    };
+
+    TrieNode* root = nullptr;
+
+    void insertHelper(std::string address, int routerNumber, TrieNode* node);
 };
+
 #endif

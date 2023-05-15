@@ -1,26 +1,35 @@
 #include "PrefixMatcher.h"
-int PrefixMatcher::selectRouter(string networkAddress){
-    int longest=0;
-    int routerNumber=0;
-    for(size_t i=0;i<addre.size();i++){
-        int minim = min(networkAddress.length(),addre[i].length());
-        int match_len=0;
-        for(int j=0;j<minim;j++){
-            if(addre[i][j]==networkAddress[j]){
-                match_len++;
-            }else{
-                j=minim;
-            }
-        }
-        if(match_len>longest){
-            longest=match_len;
-            routerNumber=i;
-        }
 
+void PrefixMatcher::insert(std::string address, int routerNumber) {
+    if (!root) {
+        root = new TrieNode();
     }
-    return numbers[routerNumber];
+    insertHelper(address, routerNumber, root);
 }
-void PrefixMatcher::insert(string address,int routerNumber){
-addre.push_back(address);
-numbers.push_back(routerNumber);
+
+void PrefixMatcher::insertHelper(std::string address, int routerNumber, TrieNode* node) {
+    for (char c : address) {
+        if (!node->children[c]) {
+            node->children[c] = new TrieNode();
+        }
+        node = node->children[c];
+    }
+    node->routerNumbers.push_back(routerNumber);
+}
+
+int PrefixMatcher::selectRouter(std::string networkAddress) {
+    TrieNode* node = root;
+    int longest = 0;
+    int routerNumber = -1;
+    for (char c : networkAddress) {
+        if (!node->children[c]) {
+            break;
+        }
+        node = node->children[c];
+        if (!node->routerNumbers.empty()) {
+            longest = node->routerNumbers.size();
+            routerNumber = node->routerNumbers[0];
+        }
+    }
+    return routerNumber;
 }
