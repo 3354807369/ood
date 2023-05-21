@@ -87,7 +87,7 @@ void Heap<T>::remove(T value) {
   if(index == -1){
     return;
   }
-  values[index] = value[values.size()-1];
+  values[index] = values[values.size()-1];
   values.pop_back();
   heapify(index);
   return;
