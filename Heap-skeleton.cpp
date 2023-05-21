@@ -60,7 +60,7 @@ void Heap<T>::insert(T value) {
    values.push_back(value);
    int child = values.size()-1;
    int parent = (values.size()-1)/2;
-   while(walues[child]<values[parent]&&child>0){
+   while(values[child]<values[parent]&&child>0){
     T tmp = values[child];
     values[child] = values[parent];
     values[parent]=tmp;

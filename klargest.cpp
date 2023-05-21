@@ -3,7 +3,7 @@
 using namespace std;
 int kth_largest(vector<int> values, int k){
     priority_queue<int,vector<int>,greater<int>> pri_queue;
-    for(int i = 0; i<values.size();i++){
+    for(size_t i = 0; i<values.size();i++){
         pri_queue.push(values[i]);
     }
     for(int i=1;i<k;i++){
