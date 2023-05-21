@@ -37,7 +37,7 @@ Heap<T>::Heap() {}
 template <typename T>
 Heap<T>::Heap(std::vector<T> start_values) {
   // copy the values into our heap vector
-  for (int i = 0; i < start_values.size(); i++) {
+  for (size_t i = 0; i < start_values.size(); i++) {
     values.push_back(start_values.at(i));
   }
 
@@ -78,7 +78,7 @@ template <typename T>
 void Heap<T>::remove(T value) {
   // TO BE IMPLEMENTED
   int index = -1;
-  for(int i=0;i<values.size();i++){
+  for(size_t i=0;i<values.size();i++){
     if(values[i] == value){
       index = i;
       break;
