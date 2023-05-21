@@ -2,12 +2,13 @@
 #include <vector>
 
 int kth_largest(std::vector<int> values, int k) {
-    std::priority_queue<int, std::vector<int>, std::greater<int>> pri_queue;
+    std::priority_queue<int, std::vector<int>, std::greater<int>> p_q;
     for (size_t i = 0; i < values.size(); i++) {
-        pri_queue.push(values[i]);
+        p_q.push(values[i]);
+        if(p_q.size()>k){
+            p_q.pop();
+        }
     }
-    for (int j = 1; j < k; j++) {
-        pri_queue.pop();
-    }
-    return pri_queue.top();
+   
+    return p_q.top();
 }
