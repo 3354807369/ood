@@ -24,8 +24,8 @@ bool DocumentManager::borrowDocument(int docid,int patronID){
     if(i_doc == documents.end()||i_pat==patrons.end()){
         return false;
     }
-    if(documents[docid].borrow()){
-        return true;
+    if(!documents[docid].borrow()){
+        return false;
     }
     patrons[patronID].borrow_doc(docid);
     return true;
