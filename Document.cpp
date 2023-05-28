@@ -18,6 +18,7 @@ if(num_copy>0){
     num_copy--;
     return true;
 }
+return false;
 }
 void Document::return_back(){
     num_copy++;

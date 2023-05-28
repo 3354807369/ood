@@ -35,7 +35,7 @@ void DocumentManager::returnDocument(int docid,int patronID){
     if(i_pat==patrons.end()){
         return;
     }
-    for(int i=0;i< patrons[patronID].get_borr_docs().size();i++){
+    for(vector<int>::size_type i=0;i< patrons[patronID].get_borr_docs().size();i++){
         if(patrons[patronID].get_borr_docs()[i]==docid){
             patrons[patronID].return_doc(docid);
             documents[docid].return_back();
